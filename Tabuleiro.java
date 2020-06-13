@@ -1,7 +1,7 @@
 package jogoVelha;
 
 public class Tabuleiro {
-	//Matriz declarada com posições, encapsulada com private
+	//Matriz declarada com posiï¿½ï¿½es, encapsulada com private
 		private String[][] tab = 	{{"1","2","3"}, 
 									{"4","5","6"}, 
 									{"7","8","9"}}; 
@@ -10,17 +10,17 @@ public class Tabuleiro {
 		public String Mostrar() {
 			for(int i = 0; i < 3; i++) {
 				for(int j = 0; j < 3; j++) {
-					System.out.printf("   " + tab [i][j]); //concatena linha e coluna
+					System.out.printf("__" + tab [i][j] + "__|"); //concatena linha e coluna
 				}
 				System.out.println("\n"); //quebra de linha para mostrar com layout do tabuleiro
 			}
 			return null;
 		}
-		//-------------------Validação jogadas-------------------
+		//-------------------Validaï¿½ï¿½o jogadas-------------------
 		public boolean Valido(String v) {
 			for(int i = 0; i < 3; i++) {
 				for(int j = 0; j < 3; j++) {
-					if(tab[i][j].equals(v)) //utilizado equals para comparação entre strings
+					if(tab[i][j].equals(v)) //utilizado equals para comparaï¿½ï¿½o entre strings
 						return true;
 				}
 			}
@@ -28,9 +28,9 @@ public class Tabuleiro {
 		}
 		
 		//--------------Insere "X" ou "O" nas jogadas--------------
-		public void Jogada(String p, String j) { //metodo usa como parametro p = posição (validada) e j = jogador
+		public void Jogada(String p, String j) { //metodo usa como parametro p = posiï¿½ï¿½o (validada) e j = jogador
 			if(p.equals("1"))
-				tab[0][0] = j; //se posição 0-0 (ou posição 1) for digitada, vai receber o sinal do jogador (X ou 0)
+				tab[0][0] = j; //se posiï¿½ï¿½o 0-0 (ou posiï¿½ï¿½o 1) for digitada, vai receber o sinal do jogador (X ou 0)
 			else if(p.equals("2"))
 				tab[0][1] = j;
 			else if(p.equals("3"))
@@ -50,23 +50,23 @@ public class Tabuleiro {
 		}
 		
 		//--------------Verifica ganhador do jogo--------------
-		public String Ganhou(int jogadas) { //metodo de verificação das jogadas para identificar se jogador ganhou
+		public String Ganhou(int jogadas) { //metodo de verificaï¿½ï¿½o das jogadas para identificar se jogador ganhou
 			String[] T = new String [8];//vetor para checar (T)otal das possibilidades onde jogador pode ganhar
 			String vencedor = "null";
 			if(jogadas == 9) {
 				vencedor = "----------- DEU VELHA!!! -----------";
 			}
-			//verificação das linhas
+			//verificaï¿½ï¿½o das linhas
 			T[0] = tab[0][0] + tab[0][1] + tab[0][2];
 			T[1] = tab[1][0] + tab[1][1] + tab[1][2];
 			T[2] = tab[2][0] + tab[2][1] + tab[2][2];
 			
-			//verificação das colunas
+			//verificaï¿½ï¿½o das colunas
 			T[3] = tab[0][0] + tab[1][0] + tab[2][0];
 			T[4] = tab[0][1] + tab[1][1] + tab[2][1];
 			T[5] = tab[0][2] + tab[1][2] + tab[2][2];
 			
-			//verificação das diagonais
+			//verificaï¿½ï¿½o das diagonais
 			T[6] = tab[0][0] + tab[1][1] + tab[2][2];
 			T[7] = tab[0][2] + tab[1][1] + tab[2][0];
 			

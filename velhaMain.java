@@ -16,11 +16,11 @@ public class velhaMain {
 			jogo.Mostrar();
 			
 			do {//Starta jogo com jogador 1
-				System.out.println("Jogador 1 - Inicie o jogo informando uma posição: ");
+				System.out.println("Jogador 1 - Inicie o jogo informando uma posicao: ");
 				posicao = ler.next();
 				while(!jogo.Valido(posicao)) {
-					System.out.println("Jogada Inválida");
-					System.out.println("Jogador 1 - Inicie o jogo informando uma posição: ");
+					System.out.println("Jogada Invalida");
+					System.out.println("Jogador 1 - Inicie o jogo informando uma posicao: ");
 					posicao = ler.next();
 					valida = 0;
 				}
@@ -37,11 +37,11 @@ public class velhaMain {
 				break;
 			}
 			do {//Starta jogo com jogador 2
-				System.out.println("Jogador 2 - Inicie o jogo informando uma posição: ");
+				System.out.println("Jogador 2 - Inicie o jogo informando uma posicao: ");
 				posicao = ler.next();
 				while(!jogo.Valido(posicao)) {
-					System.out.println("Jogada Inválida");
-					System.out.println("Jogador 2 - Inicie o jogo informando uma posição: ");
+					System.out.println("Jogada Invalida");
+					System.out.println("Jogador 2 - Inicie o jogo informando uma posicao: ");
 					posicao = ler.next();
 					valida = 0;
 				}
@@ -58,7 +58,7 @@ public class velhaMain {
 				break;
 			}
 		}
-		System.out.println("******* PARABÉNS " + jogo.Ganhou(Jogadas) + " É O VENCEDOR!!!!! *******");
+		System.out.println("******* PARABENS " + jogo.Ganhou(Jogadas) + " EH O VENCEDOR!!!!! *******");
 	}
 
 }
